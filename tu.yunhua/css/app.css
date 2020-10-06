@@ -80,7 +80,9 @@ a:hover {
 .flex-column { flex-direction:column; }
 
 
-
+/*  pale blue #CEEAFF
+    bulldog grey #6987A3
+    grey #D3D3D3          */
 
 
 
@@ -89,18 +91,18 @@ a:hover {
     margin: 1em 0;
 }
 .form-label {
-    font-size: 0.8em;
-    color: var(--color-neutral-medium);
+    font-size: 1em;
+    color: #6987A3;
     margin: 0.5rem 0;
 }
 .ui-mobile label {
-   margin:0.5rem 0;
+   margin:0.8rem 0;
 }
 .form-input {
     display: inline-block;
     width: 100%;
     border-width: 0;
-    background-color: var(--color-neutral-lighter);
+    background-color: #ceeaff4f;
     font: inherit;
     padding: 0.5em 1em;
     margin: 0;
@@ -110,7 +112,7 @@ a:hover {
     display: inline-block;
     width: 100%;
     border-width: 0;
-    background-color: var(--color-neutral-light);
+    background-color: #CEEAFF;
     font: inherit;
     padding: 0.5em 1em;
     margin: 0;
@@ -124,7 +126,9 @@ a:hover {
 
 #signin-form,
 #signup-form {
-   padding:1em;
+   padding-left: 4em;
+   padding-right: 4em;
+   padding-bottom: 6em;
 }
 .signin-alt {
    padding:1em;
