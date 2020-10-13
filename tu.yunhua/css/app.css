@@ -179,7 +179,7 @@ a:hover {
    font-size:0.8em;
 }
 #recent-page [data-role='main'] {
-   background-image:url(../img/map.jpg);
+   background-image:url(./img/map.png);
    background-position:center;
    background-size:cover;
 }
