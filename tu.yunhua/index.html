@@ -10,6 +10,9 @@
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
 
+   <script src="js/functions.js"></script>
+   <script src="js/pages.js"></script>
+   <script src="js/parts.js"></script>
    <script src="js/signin.js"></script>
    <script src="js/app.js"></script>
 
@@ -84,13 +87,14 @@
 <!-- map -->
    <section data-role="page" id="recent-page">
       <div data-role="main">
-         <div class="floater top right">
-            <div class="btn-circle" data-activate="#recent-add-modal">&equiv;</div>
-         </div>
-         <div class="floater bottom right">
-            <div class="btn-circle" data-toggle="#recent-profile-modal">&plus;</div>
-         </div>
 
+         <header data-role="header">
+            <h1>Recen Location</h1>
+            <ul>
+               <li class="flex-stretch"></li>
+               <li><a href="#" data-activate="#list-add-modal">&plus;</a></li>
+            </ul>
+         </header>
 
          <div class="modal" id="recent-add-modal">
             <div class="modal-back" data-deactivate="#recent-add-modal"></div>
@@ -107,7 +111,7 @@
             </div>
          </div>
       </div>
-      <footer data-role="footer" data-template="#footer-template"></footer> 
+      <footer data-role="footer" data-template="#footer-template-map"></footer> 
    </section>
 
 
@@ -129,60 +133,55 @@
             <!-- li*10>a[href=#animal-profile-page]{Animal $} -->
 
             <div class="animallist">
-               
-            <!-- TEST -->
-
-      <div class="grid gap bulldoglist">
-  
-         <div class="bulldogcol">
-           <figure class="bulldog-figure">
-              <div class="bulldog-photo">
-                 <img src="img/bulldog/9.jpg">
-                 <a href="#animal-profile-page" class="btn btn-outline-white py-2 px-4">Know More</a>
-              </div>
-           </figure>
-        </div>
-
-         <div class="bulldogcol">
-           <figure class="bulldog-figure">
-              <div class="bulldog-photo">
-                 <img src="img/bulldog/9.jpg">
-                 <a href="#animal-profile-page" class="btn btn-outline-white py-2 px-4">Know More</a>
-              </div>
-           </figure>
-        </div>
-       
-      </div>
-
-
-
-      <!-- test -->
-
-      <div class="grid gap bulldoglist">
-  
-         <div class="bulldogcol">
-           <figure class="bulldog-figure">
-              <div class="bulldog-photo">
-                 <img src="img/bulldog/9.jpg">
-                 <div class="image-infor">
-                    <h2 class="dogname">
-                       DUDU
-                    </h2>
-                    <a href="#animal-profile-page">Know More</a>
+         <!-- 
+               <div class="grid gap bulldoglist">
+           
+                  <div class="bulldogcol">
+                    <figure class="bulldog-figure">
+                       <div class="bulldog-photo">
+                          <img src="img/bulldog/9.jpg">
+                          <a href="#animal-profile-page" class="btn btn-outline-white py-2 px-4">Know More</a>
+                       </div>
+                    </figure>
                  </div>
-              </div>
-           </figure>
-        </div>
-        
-      <!-- test -->
+                
+               </div> -->
 
 
+               <div class="grid gap bulldoglist">
+           
+                  <a href="#animal-profile-page" class="bulldogcol">
+                    <figure class="bulldog-figure">
+                       <div class="bulldog-photo">
+                          <img src="img/bulldog/9.jpg">
+                          <div class="animallist-description">
+                             <div class="animal-name"><h2>DUDU</h2></div>
+                             <div class="animal-breed">French Bulldog</div>
+                          </div>
+                       </div>
+                    </figure>
+                  </a>
+                  <a href="#animal-profile-page" class="bulldogcol">
+                    <figure class="bulldog-figure">
+                       <div class="bulldog-photo">
+                          <img src="img/bulldog/9.jpg">
+                          <div class="animallist-description">
+                             <div class="animal-name"><h2>DUDU</h2></div>
+                             <div class="animal-breed">French Bulldog</div>
+                          </div>
+                       </div>
+                    </figure>
+                  </a>
+                  
+               
+               </div>
 
-      </div>
+
+            </div>
 
          </div>
       </div>
-      <footer data-role="footer" data-template="#footer-template"></footer>
+      <footer data-role="footer" data-template="#footer-template-bulldog"></footer>
 
 
 <!-- list-add-modal -->
@@ -196,8 +195,8 @@
                   <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
                </div>
                <div class="form-control">
-                  <label for="list-add-type" class="form-label">Type</label>
-                  <input id="list-add-type" type="text" class="form-input" data-role="none" placeholder="Type animal type">
+                  <label for="list-add-address" class="form-label">Address</label>
+                  <input id="list-add-address" type="text" class="form-input" data-role="none" placeholder="Type animal address">
                </div>
                <div class="form-control">
                   <label for="list-add-breed" class="form-label">Breed</label>
@@ -226,7 +225,7 @@
 
          <h1>My Profile</h1>
          <ul>
-            <li class="flex-stretch"><a href="#list-page" data-activate="#list-page">Back</a></li>
+            <li class="flex-stretch"><a href="#list-page" data-activate="#list-page"></a></li>
 
             <li><a href="#profile-settings-page" data-activate="#list-add-modal">Edit</a></li>
          </ul>
@@ -234,54 +233,32 @@
 
 
       <div data-role="main">
-<!--          <div class="profile-image">
+            <!--          
+            <div class="profile-image">
             <img src="img/profile.jpg" alt="">
-         </div> -->
+            </div> 
+            -->
          <div class="overscroll">
 
-            <div class="profile-body" style="background:url(img/profile.jpg) no-repeat; height:700px; text-align: center !important;">
-   <!--             <div class="profile-name">Trista Tu</div>
-               <div class="profile-email"><strong>Email</strong>: tristatutu@gmail.com</div> -->
+            <div class="profile-body">
+               <!--             
+               <div class="profile-name">Trista Tu</div>
+               <div class="profile-email"><strong>Email</strong>: tristatutu@gmail.com</div>
+                -->
+
                <div class="col-md-10 text-center pt-5">
 
                   <div class="site-heading site-animate fadeInUp site-animated">
                      <h1 style="font-weight: 0px; font-weight: 100; font-size: x-large;">Hello, I'm</h1>
                      <h3><strong class="d-block">Trista Tu</strong></h3>
+                     
                      <h6 class="mb-4">Web Designer</h6>
                      <h6 class="mb-4">tristatutu@gmail.com</h6>
-                     <p style="padding-left: 7em; padding-right: 7em; color: white;">I can expect endless affection with my bulldogs in my life. They love to stay close, follow around the house, and snuggle up next to me. I instinctively know to approach them like children with patience and passivity.</p>
-                     <p><a href="#settings-page">Edit and IconHere<i class="icon-chevron-right"></i></a></p>
+
                            
                      <div class="bulldog-account-page" style="padding-top: 60px; padding-bottom: 20px;">
                         <strong class="d-block text-white text-uppercase letter-spacing">Here Are My Bulldogs. </strong>
                      </div>
-
-
-               <div class="left">
-                  <a href="#animal-profile-page" class="animallist-item">
-                     <div class="animallist-image">
-                        <img src="img/bulldog/9.jpg" alt="">
-                     </div>
-                     <div class="animallist-description">
-                        <div class="animallist-name">DUDU</div>
-                        <div class="animallist-type"><strong>type</strong> Horse</div>
-                        <div class="animallist-breed">breed Andalusian</div>
-                     </div>
-                  </a>
-               </div>
-
-               <div class="right">
-                  <a href="#animal-profile-page" class="animallist-item">
-                     <div class="animallist-image">
-                        <img src="img/bulldog/9.jpg" alt="">
-                     </div>
-                     <div class="animallist-description">
-                        <div class="animallist-name">NANA</div>
-                        <div class="animallist-type"><strong>type</strong> Dog</div>
-                        <div class="animallist-breed">breed Bulldog</div>
-                     </div>
-                  </a>
-               </div>
 
 
                   </div>
@@ -298,6 +275,7 @@
       <!-- <footer data-role="footer" data-template="#footer-template"></footer> -->
 
       </div>
+      <footer data-role="footer" data-template="#footer-template-account"></footer> 
       
    </section>
 
@@ -446,22 +424,59 @@
 
 
 
-   <script type="text/template" id="footer-template">
+   <script type="text/template" id="footer-template-map">
    <ul>
       <li><a href="#recent-page">
-         <div class="nav-icon"><img src="./img/icon/grey/map.png" alt=""></div>
-         <div class="nav-label">Map</div>
+         <div class="nav-icon"><img src="./img/icon/blue/map.png" alt=""></div>
+         <div class="nav-label" style="color:#a5d6fa;">Map</div>
       </a></li>
       <li><a href="#list-page">
          <div class="nav-icon"><img src="./img/icon/grey/bulldog.png" alt=""></div>
-         <div class="nav-label">Bulldog</div>
+         <div class="nav-label" style="color:#bebfc1;">Bulldog</div>
       </a></li>
       <li><a href="#user-profile-page">
          <div class="nav-icon"><img src="./img/icon/grey/account.png" alt=""></div>
-         <div class="nav-label">Account</div>
+         <div class="nav-label" style="color:#bebfc1;">Account</div>
       </a></li>
    </ul>
    </script>
+
+   <script type="text/template" id="footer-template-bulldog">
+   <ul>
+      <li><a href="#recent-page">
+         <div class="nav-icon"><img src="./img/icon/grey/map.png" alt=""></div>
+         <div class="nav-label" style="color:#bebfc1;">Map</div>
+      </a></li>
+      <li><a href="#list-page">
+         <div class="nav-icon"><img src="./img/icon/blue/bulldog.png" alt=""></div>
+         <div class="nav-label" style="color:#a5d6fa;">Bulldog</div>
+      </a></li>
+      <li><a href="#user-profile-page">
+         <div class="nav-icon"><img src="./img/icon/grey/account.png" alt=""></div>
+         <div class="nav-label" style="color:#bebfc1;">Account</div>
+      </a></li>
+   </ul>
+   </script>
+
+   <script type="text/template" id="footer-template-account">
+   <ul>
+      <li><a href="#recent-page">
+         <div class="nav-icon"><img src="./img/icon/grey/map.png" alt=""></div>
+         <div class="nav-label" style="color:#bebfc1;">Map</div>
+      </a></li>
+      <li><a href="#list-page">
+         <div class="nav-icon"><img src="./img/icon/grey/bulldog.png" alt=""></div>
+         <div class="nav-label" style="color:#bebfc1;">Bulldog</div>
+      </a></li>
+      <li><a href="#user-profile-page">
+         <div class="nav-icon"><img src="./img/icon/blue/account.png" alt=""></div>
+         <div class="nav-label" style="color:#a5d6fa;">Account</div>
+      </a></li>
+   </ul>
+   </script>
+
+
+
 
 
 

@@ -8,6 +8,21 @@ $(()=>{
    $(document)
 
 
+
+   .on("pagecontainerbeforeshow",function(e,ui){
+      console.log(ui.toPage[0].id)
+
+      // Routing
+      switch(ui.toPage[0].id) {
+         case 'recent-page': RecentPage(); break;
+         case 'list-page': ListPage(); break;
+         case 'user-profile-page': UserProfilePage(); break;
+      }
+   })
+
+
+
+
    /* FORM SUBMISSIONS */
 
    // event delegation
@@ -43,6 +58,7 @@ $(()=>{
       $(target).toggleClass("active");
    })
    ;
+
 
 
 

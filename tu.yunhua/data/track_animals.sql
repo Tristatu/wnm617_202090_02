@@ -1,13 +1,3 @@
-CREATE TABLE IF NOT EXISTS `track_animals` (
-`id` INT NULL,
-`user_id` INT NULL,
-`name` VARCHAR(MAX) NULL,
-`type` VARCHAR(MAX) NULL,
-`breed` VARCHAR(MAX) NULL,
-`description` VARCHAR(MAX) NULL,
-`img` VARCHAR(MAX) NULL,
-`date_create` VARCHAR(MAX) NULL
-);
 
 INSERT INTO track_animals VALUES
 (1,9,'Marketoid','bulldog','Alapaha Blue Blood Bulldog','Velit eu et cupidatat nisi et voluptate nulla nostrud anim exercitation sunt consequat enim. Occaecat velit minim amet veniam voluptate reprehenderit Lorem. Pariatur do id irure anim officia enim non sit consequat culpa.','https://via.placeholder.com/400/918/fff/?text=undefined','2020-08-06 01:52:07'),

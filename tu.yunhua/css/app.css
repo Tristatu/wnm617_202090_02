@@ -830,7 +830,7 @@ b, strong {
 
 /*test*/
 
-.image-infor {
+.animallist-description {
     text-align: center;
     position: absolute;
     top: 50%;
@@ -842,12 +842,16 @@ b, strong {
 }
 
 
-.bulldog-photo .image-infor h2 {
+.bulldog-photo .animallist-description h2 {
     color: #fff;
 }
 
-.bulldog-photo .image-infor a {
+.bulldog-photo .animallist-description a {
     color: #fff;
+}
+
+.animal-breed{
+  color: #fff;
 }
 
 /*test*/

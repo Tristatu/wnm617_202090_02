@@ -1,13 +1,3 @@
-CREATE TABLE IF NOT EXISTS `track_locations` (
-`id` INT NULL,
-`animal_id` INT NULL,
-`lat` FLOAT NULL,
-`lng` FLOAT NULL,
-`description` VARCHAR(MAX) NULL,
-`photo` VARCHAR(MAX) NULL,
-`icon` VARCHAR(MAX) NULL,
-`date_create` VARCHAR(MAX) NULL
-);
 
 INSERT INTO track_locations VALUES
 (1,4,37.775485,-122.435077,'Velit ad et quis fugiat nostrud esse tempor sunt. Voluptate ut consectetur aute magna. Magna in non deserunt Lorem ullamco quis velit quis ea eu elit sit.','https://via.placeholder.com/400/','https://via.placeholder.com/100/?text=ICON','2020-08-03 02:54:03'),
