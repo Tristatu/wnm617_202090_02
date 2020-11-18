@@ -1,0 +1,70 @@
+
+/* Account */
+
+
+.site-hero, .site-hero .row {
+    height: 100vh;
+    min-height: 800px;
+}
+.site-hero {
+    background-color: #ccc;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.site-hero, .site-hero .row {
+    height: 100vh;
+    min-height: 800px;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.pt-5, .py-5 {
+    padding-top: 26rem !important;
+}
+
+.site-hero h1, .site-hero .lead {
+    font-weight: 200;
+    color: #fff;
+}
+.site-hero h1 {
+    font-weight: 200;
+    margin-bottom: 20px;
+    display: block;
+}
+
+h1, .h1 {
+    font-size: 2.5rem;
+}
+
+.site-hero h1 strong {
+    font-weight: 800;
+}
+
+.d-block {
+    display: block !important;
+}
+
+b, strong {
+    font-weight: bolder;
+}
+
+.letter-spacing {
+    letter-spacing: .2rem;
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.text-uppercase {
+    text-transform: uppercase !important;
+}

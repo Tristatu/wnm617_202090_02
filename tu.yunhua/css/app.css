@@ -60,6 +60,10 @@ font-weight: bolder;
 }
 
 h4 { 
+font-size:200%;
+font-family: 'Ubuntu', sans-serif;
+color:#CEEAFF;
+font-weight: bolder;
 
 }
 
@@ -72,8 +76,8 @@ font-size:100%;
 font-family: 'Open Sans', sans-serif;
 color:#CEEAFF;
 font-weight: bolder;
-margin-top: 10px;
-margin-bottom: 10px;
+margin-top: 8px;
+margin-bottom: 8px;
 
 }
 
@@ -200,11 +204,11 @@ a:hover {
    text-align:center;
    font-size:0.8em;
 }
-#recent-page [data-role='main'] {
+/*#recent-page [data-role='main'] {
    background-image:url(../img/map.png);
    background-position:center;
    background-size:cover;
-}
+}*/
 
 
 
@@ -335,15 +339,16 @@ a:hover {
 
 /* MODALS */
 .modal {
-    z-index: 2;
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
-    transition: all 0.5s;
+    transition: all 0.3s;
     opacity: 0;
     pointer-events: none;
+    z-index: 10;
 }
+
 .modal.active {
    opacity:1;
 }
@@ -431,6 +436,19 @@ a:hover {
 }
 
 
+.modal-close-floater.top {
+    top: -1em;
+    left: 15em;
+    transform: translateY(-100%);
+}
+.modal-close-floater.right {
+    right: 1em;
+}
+.modal-close-floater {
+    position: absolute;
+}
+
+
 
 
 
@@ -445,7 +463,7 @@ a:hover {
 
 /* CIRCLE BUTTON */
 .btn-circle {
-    background-color: #ceeaff;
+    background-color: white;
     line-height: 3rem;
     width: 3rem;
     display: inline-block;
@@ -453,20 +471,20 @@ a:hover {
     border-radius: 2rem;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
     font-size: 1.5em;
-    color: #546375;
 }
 
 
 
 /* PROFILE */
 .profile-image img {
-    /*border-radius: 50%;*/
-    width: calc(100vw - 4em);
-    height: calc(100vw - 4em);
+    width: calc(60vw - 4em);
+    height: calc(60vw - 4em);
     object-fit: cover;
-    margin: 2em;
+    margin-left: 1.5em;
 }
+
 .profile-body {
+   text-align: center !important;
    padding:1em;
    /*padding-top: 20em;*/
    color:#ceeaff;
@@ -474,6 +492,14 @@ a:hover {
 .profile-name {
    font-size:1.5em;
    margin-bottom: 1em;
+}
+
+.profile-image-animal img {
+    border-radius: 50%;
+    width: calc(100vw - 4em);
+    height: calc(100vw - 4em);
+    object-fit: cover;
+    margin: 2em;
 }
 
 
@@ -625,16 +651,6 @@ h2, .h2 {
 
 
 
-
-
-
-
-
-
-
-
-
-
 .settings-list {
    list-style-type:none;
    margin:0;
@@ -682,6 +698,11 @@ h2, .h2 {
 .animallist-name {
    font-size:1.2em;
 }
+
+
+
+
+ /*list-add-modal */
 
 
 
@@ -800,6 +821,11 @@ b, strong {
 
 
 
+
+
+
+
+
 /*.bulldog-photo:hover:before {
     background: rgba(0, 0, 0, 0.4);
     content: "";
@@ -818,6 +844,11 @@ b, strong {
 */
 
 
+
+
+
+
+
 .bulldog-photo{
   filter:grayscale(1);
 }
@@ -829,7 +860,7 @@ b, strong {
 
 
 /*test*/
-
+/*
 .animallist-description {
     text-align: center;
     position: absolute;
@@ -852,7 +883,7 @@ b, strong {
 
 .animal-breed{
   color: #fff;
-}
+}*/
 
 /*test*/
 
@@ -861,11 +892,53 @@ b, strong {
 
 
 
+.map {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
 
 
 
 
 
+
+.animal-top {
+  flex:none;
+  position:relative;
+  height:30vh;
+}
+.animal-top .profile {
+    display: flex;
+}
+.animal-top .profile-image img {
+    width: 30vw;
+    height: 30vw;
+}
+.animal-bottom {
+  flex:1 1 100%;
+  position:relative;
+}
+
+
+.animal-profile-image img {
+    border-radius: 50%;
+    width: calc(100vw - 4em);
+    height: calc(100vw - 4em);
+    object-fit: cover;
+    margin: 2em;
+}
+
+
+
+
+.icon {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+}
 
 
 
