@@ -54,7 +54,12 @@ const checkUserId = () => {
          $.mobile.navigate("#signin-page");
    } else {
       // logged in
-      if(p.some(o=>window.location.hash===o))
-         $.mobile.navigate("#recent-page");
+      if(p.some(o=>window.location.hash===o)) {
+         query({type:'animals_by_user_id',params:[sessionStorage.userId]})
+         .then(d=>{
+            if(d.result.length) $.mobile.navigate("#recent-page");
+             else $.mobile.navigate("#list-page");
+         })
+      }
    }
 }

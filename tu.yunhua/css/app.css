@@ -76,8 +76,8 @@ font-size:100%;
 font-family: 'Open Sans', sans-serif;
 color:#CEEAFF;
 font-weight: bolder;
-margin-top: 8px;
-margin-bottom: 8px;
+margin-top: 4px;
+margin-bottom: 4px;
 
 }
 
@@ -175,6 +175,9 @@ a:hover {
     font-size: 14px;
     border-radius: 0.5em;
 }
+
+
+
 .form-button {
     display: inline-block;
     width: 100%;
@@ -185,9 +188,33 @@ a:hover {
     margin: 0;
     outline: 0;
     text-align: center;
-    border-radius: 1.2em;
+    border-radius: 1em;
     font-weight: 700;
+    margin-top: 1.5em;
 }
+
+
+.form-input-describe {
+    display: inline-block;
+    width: 100%;
+    border-width: 0;
+    background-color: var(--color-neutral-lighter);
+    font: inherit;
+    padding-top: 0.8em;
+    padding-bottom: 5.6em;
+    padding-left: 0.8em;
+    margin: 0;
+    outline: 0;
+    font-size: 14px;
+    border-radius: 0.8em;
+}
+
+
+
+
+
+
+
 
 
 
@@ -335,8 +362,6 @@ a:hover {
 
 
 
-
-
 /* MODALS */
 .modal {
     position: absolute;
@@ -421,6 +446,7 @@ a:hover {
 
 .modal-drawer .modal-body {
    flex: 1 1 100%;
+   background-color: #6987a3;
 }
 
 
@@ -437,7 +463,7 @@ a:hover {
 
 
 .modal-close-floater.top {
-    top: -1em;
+    top: 3em;
     left: 15em;
     transform: translateY(-100%);
 }
@@ -463,13 +489,14 @@ a:hover {
 
 /* CIRCLE BUTTON */
 .btn-circle {
-    background-color: white;
-    line-height: 3rem;
-    width: 3rem;
+    color: white;
+    background-color: #50799b;
+    line-height: 2rem;
+    width: 2rem;
     display: inline-block;
     text-align: center;
     border-radius: 2rem;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    box-shadow: 2px 2px 5px #2e353e;
     font-size: 1.5em;
 }
 
@@ -477,16 +504,18 @@ a:hover {
 
 /* PROFILE */
 .profile-image img {
-    width: calc(60vw - 4em);
-    height: calc(60vw - 4em);
+    border-radius: 50%;
+    width: calc(80vw - 4em);
+    height: calc(80vw - 4em);
     object-fit: cover;
-    margin-left: 1.5em;
+    margin-left: 4.5em;
+    margin-top: 2.5em;
 }
 
 .profile-body {
    text-align: center !important;
    padding:1em;
-   /*padding-top: 20em;*/
+   padding-top: 3em;
    color:#ceeaff;
 }
 .profile-name {
@@ -676,8 +705,8 @@ h2, .h2 {
 
 
 .animallist-image img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     vertical-align:text-bottom;
 }
@@ -694,9 +723,11 @@ h2, .h2 {
 .animallist-type,
 .animallist-breed {
    font-size:0.8em;
+   margin-top: 0.4em;
 }
 .animallist-name {
-   font-size:1.2em;
+   margin-top: 0.2em;
+   font-size:1.5em;
 }
 
 
@@ -806,11 +837,11 @@ b, strong {
 }
 .bulldog-figure{
     overflow: hidden;
-    box-shadow: 1px 1px 4px 0px rgb(0 0 0 / 5%);
     margin: 0.5em;
     height: 100%;
     background-color: #ffffff7a;
-    border-radius: 2em;
+    border-radius: 1.6em;
+    box-shadow: 2px 2px 10px #546375;
 
 }
 .bulldog-figure img {
@@ -906,6 +937,7 @@ b, strong {
 
 
 .animal-top {
+  margin-top: 20px;
   flex:none;
   position:relative;
   height:30vh;
@@ -935,11 +967,16 @@ b, strong {
 
 
 .icon {
-    width: 1.5em;
-    height: 1.5em;
+    width: 1em;
+    height: 1em;
     vertical-align: middle;
 }
 
+
+.display-flex.img{
+    width: 140px;
+    height: 200px;
+}
 
 
 

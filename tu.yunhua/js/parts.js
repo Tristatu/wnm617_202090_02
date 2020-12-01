@@ -1,29 +1,5 @@
 
 
-
-
-// o: current object i: current index a: current array
-
-
-
-// const makeAnimalList = templater(o=>`
-
-// 	<a href="#animal-profile-page" class="bulldogcol">
-//         <figure class="bulldog-figure">
-//             <div class="bulldog-photo">
-//                 <img src="${o.img}">
-//                 <div class="animallist-description">
-//                 	<div class="animal-name"><h2>${o.name}</h2></div>
-//                 	<div class="animal-breed">${o.type}</div>
-//                 </div>
-//             </div>
-//         </figure>
-//     </a>
-
-// `);
-
-
-
 const makeAnimalList = templater(o=>`
 <div class="animallist-item js-animal-jump" data-id="${o.id}">
    <div class="animallist-image">
@@ -32,42 +8,66 @@ const makeAnimalList = templater(o=>`
    <div class="animallist-description">
       <div class="animallist-name">${o.name}</div>
       <div class="animallist-type">Type: ${o.type}</div>
-      <div class="animallist-breed">Color: ${o.breed}</div>
+      <div class="animallist-breed">Breed: ${o.breed}</div>
    </div>
 </div>
 `);
 
 
-
-const makeAnimalProfile = templater(o=>`
-<div class="animal-profile-image">
+const makeUserProfile = templater(o=>`
+<div class="profile-image">
    <img src="${o.img}" alt="">
 </div>
-<div class="animal-profile-body">
-   <div class="animal-profile-name">${o.name}</div>
-   <div class="aniimal-profile-type">Type: ${o.type}</div>
-   <div class="animal-profile-breed">Color: ${o.breed}</div>
+<div class="profile-body">
+   <div class="profile-name">${o.name}</div>
+   <div class="profile-email" style="margin-bottom: 10px;"><strong>Email</strong>: ${o.email}</div>
+   <div class="profile-location"><strong>Location</strong>: San Francisco, CA</div>
 </div>
+
+`);
+
+
+// <p><a href="#settings-page">Settings</a></p> 
+
+
+const makeAnimalProfile = templater(o=>`
+<div class="profile-image">
+   <img src="${o.img}" alt="">
+</div>
+<div class="profile-body">
+   <div class="profile-name">${o.name}</div>
+   <div class="profile-type" style="margin-bottom: 10px;">Type: ${o.type}</div>
+   <div class="profile-breed">Breed: ${o.breed}</div>
+</div>
+<div style="display: inline-block;width: 30%;border-width: 0;background-color: var(--color-neutral-light);font: inherit;padding: 0.7em 1em;margin-left: 8.2em;outline: 0;text-align: center;border-radius: 1em;font-weight: 700;margin-top: 0.5em;     margin-bottom: 0.5em;
+">
+   <a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a>
 </div>
 `);
+
 
 
 
 const makeAnimalPopup = o=>`
 <div class="display-flex">
 <div>
-   <img src="${o.img}" alt="" style="width:100px;height:100px">
+   <img src="${o.img}" alt="" style="width:140px;height:210px">
 </div>
-<div style="padding-left:1em">
+<div style="padding-left:1em;padding-top: 2em;}">
    <div class="profile-name">${o.name}</div>
    <div><strong>Type</strong>: ${o.type}</div>
-   <div><strong>Breed</strong>: ${o.breed}</div>
+   <div style="margin-top: 0.5em;}"><strong>Breed</strong>: ${o.breed}</div>
+   <div>
+   <a href="#" class="form-button js-animal-jump" data-id="${o.animal_id}">Know More</a> 
+   </div>
 </div>
 </div>
-<div>
-<a href="#" class="form-button js-animal-jump" data-id="${o.animal_id}">Visit</a> 
-</div>
+
 `;
+
+
+
+
 
 
 
@@ -80,8 +80,7 @@ const FormControl = ({namespace,name,displayname,type,placeholder,value}) => {
 }
 
 
-
-const makeAnimalProfileUpdateForm = o => `
+const makeAnimalEditForm = o => `
 ${FormControl({
    namespace:"animal-edit",
    name:"name",
@@ -106,11 +105,14 @@ ${FormControl({
    placeholder:"Type Animal Breed",
    value:o.breed
 })}
+<div class="form-control">
+   <label for="animal-edit-description" class="form-label">Description</label>
+   <textarea id="animal-edit-description" class="form-input-describe" data-role="none" placeholder="Type animal description">${o.description}</textarea>
+</div>
 `;
 
 
-const makeUserProfileUpdateForm = o => `
-<form id="user-edit-form" data-ajax="false" style="padding:1em">
+const makeUserEditForm = o => `
 ${FormControl({
    namespace:"user-edit",
    name:"username",
@@ -135,6 +137,4 @@ ${FormControl({
    placeholder:"Type Your Email",
    value:o.email
 })}
-</form>
 `;
-
