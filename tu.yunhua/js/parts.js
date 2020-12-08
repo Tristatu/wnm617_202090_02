@@ -1,3 +1,7 @@
+const drawAnimalList = (a,empty_phrase='Hey Dummy, add an animal.') => {
+   $("#list-page .animallist")
+      .html(a.length?makeAnimalList(a):empty_phrase);
+}
 
 
 const makeAnimalList = templater(o=>`
@@ -17,6 +21,9 @@ const makeAnimalList = templater(o=>`
 const makeUserProfile = templater(o=>`
 <div class="profile-image">
    <img src="${o.img}" alt="">
+   <div class="floater right bottom" >
+      <a href="#user-upload-page" ><img class="icon" style="width: 2em; height: 2em;" src="./img/add_profile_photo.png"></a>
+   </div>
 </div>
 <div class="profile-body">
    <div class="profile-name">${o.name}</div>
@@ -138,3 +145,33 @@ ${FormControl({
    value:o.email
 })}
 `;
+
+
+
+
+
+
+const filterList = (animals,type) => {
+   let a = [...(new Set(animals.map(o=>o[type])))];
+   return templater(o=>`<div class="filter" data-field="${type}" data-value="${o}">${o[0].toUpperCase()+o.substr(1)}</div>`)(a);
+}
+
+const makeFilterList = (animals) => {
+   return `
+   <div class="filter" style="padding-left: 1em; padding-right: 1em;" data-field="type" data-value="all">All</div> 
+
+   ${filterList(animals,'breed')} 
+   `;
+}
+
+
+
+
+
+const makeUploaderImage = ({namespace,folder,name}) => {
+   $(`#${namespace}-image`).val(folder+name);
+   $(`#${namespace}-page .image-uploader`)
+      .css({'background-image':`url('${folder+name}')`})
+}
+
+

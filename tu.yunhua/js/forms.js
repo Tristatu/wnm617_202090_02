@@ -118,3 +118,71 @@ const checkLocationAddForm = () => {
       window.history.go(-2);
    })
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+const checkSearchForm = async () => {
+   let s = $("#list-search-input").val();
+   console.log(s)
+
+   let r = await query({type:"search_animals",params:[s,sessionStorage.userId]});
+
+   drawAnimalList(r.result,'No results found');
+
+   console.log(r)
+}
+
+
+
+const checkListFilter = async (d) => {
+   let r = d.value=='all' ?
+      await query({
+         type:'animals_by_user_id',
+         params:[sessionStorage.userId]
+      }) :
+      await query({
+         type:'animal_filter',
+         params:[d.field,d.value,sessionStorage.userId]
+      });
+
+   console.log(r)
+   drawAnimalList(r.result,'No results found');
+}
+
+
+
+
+const checkUpload = file => {
+   let fd = new FormData();
+   fd.append("image",file);
+
+   return fetch('data/api.php',{
+      method:'POST',
+      body:fd
+   }).then(d=>d.json())
+}
+
+const checkUserUpload = () => {
+   let upload = $("#user-upload-image").val()
+   if(upload=="") return;
+
+   query({
+      type:'update_user_image',
+      params:[upload,sessionStorage.userId]
+   }).then(d=>{
+      if(d.error) {
+         throw d.error;
+      }
+      window.history.back();
+   })
+}

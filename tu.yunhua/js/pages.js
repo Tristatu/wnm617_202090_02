@@ -49,6 +49,7 @@ const RecentPage = async() => {
 
 
 
+
 // async and await
 const ListPage = async() => {
    let d = await query({
@@ -56,11 +57,13 @@ const ListPage = async() => {
       params:[sessionStorage.userId]
    });
 
+   $("#list-page .filter-list").html(makeFilterList(d.result))
+
    console.log(d)
 
-   $("#list-page .animallist")
-      .html(d.result.length?makeAnimalList(d.result):'Hey Dummy, add an animal.');
+   drawAnimalList(d.result);
 }
+
 
 
 
@@ -99,6 +102,21 @@ const UserEditPage = async() => {
 
 
 
+
+const UserUploadPage = async() => {
+   query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   }).then(d=>{
+      console.log(d)
+
+      makeUploaderImage({
+         namespace:'user-upload',
+         folder:'',
+         name:d.result[0].img
+      })
+   });
+}
 
 
 
