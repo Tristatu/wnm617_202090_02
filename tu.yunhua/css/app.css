@@ -526,7 +526,7 @@ a:hover {
     width: calc(100vw - 4em);
     height: calc(100vw - 4em);
     object-fit: cover;
-    margin: 2em;
+    margin: 1em;
 }
 
 .profile-image img {
@@ -539,13 +539,13 @@ a:hover {
 
 .profile-body {
    text-align: center !important;
-   padding:1em;
-   padding-top: 1em;
+/*   padding:1em;
+   padding-top: 1em;*/
    color:#ceeaff;
 }
 .profile-name {
    font-size:1.5em;
-   margin-bottom: 1em;
+   margin-bottom: 10px;
 }
 
 .profile-image-animal img {

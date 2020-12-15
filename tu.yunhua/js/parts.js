@@ -30,7 +30,7 @@ const makeUserProfile = templater(o=>`
 </div>
 <div class="profile-body">
    <div class="profile-name">${o.name}</div>
-   <div class="profile-email" style="margin-bottom: 10px;"><strong>Email</strong>: ${o.email}</div>
+   <div class="profile-email" style="margin-bottom: 6px;"><strong>Email</strong>: ${o.email}</div>
    <div class="profile-location"><strong>Location</strong>: San Francisco, CA</div>
 </div>
 
