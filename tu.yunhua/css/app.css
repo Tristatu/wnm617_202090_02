@@ -44,7 +44,7 @@ font-size:300%;
 font-family: 'Ubuntu', sans-serif;
 color:#CEEAFF;
 font-weight: bolder;
-margin-top: 60px;
+margin-top: 30px;
 
 }
 
@@ -68,8 +68,13 @@ font-weight: bolder;
 }
 
 h5 {
+font-size:120%;
+font-family: 'Ubuntu', sans-serif;
+color:#CEEAFF;
+font-weight: bolder;
 
 }
+
 
 h6 {
 font-size:100%;
@@ -80,6 +85,10 @@ margin-top: 4px;
 margin-bottom: 4px;
 
 }
+
+
+
+
 
 p {
   font-size: 12px;
@@ -124,14 +133,16 @@ a:hover {
    width: 100%;
    height: 100%;
    overflow: auto;
+/*   position: absolute;*/
 }
 
 
 .animallist{
-    width: 100%;
-    margin: 20px auto;
-    padding-left: 1em;
-    padding-right: 1em;
+    margin: 6px auto;
+    padding: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .left{
@@ -191,6 +202,7 @@ a:hover {
     border-radius: 1em;
     font-weight: 700;
     margin-top: 1.5em;
+    color: #6987a3;
 }
 
 
@@ -230,6 +242,7 @@ a:hover {
    padding:1em;
    text-align:center;
    font-size:0.8em;
+   color: white;
 }
 /*#recent-page [data-role='main'] {
    background-image:url(../img/map.png);
@@ -464,7 +477,7 @@ a:hover {
 
 .modal-close-floater.top {
     top: 3em;
-    left: 15em;
+    left: 10em;
     transform: translateY(-100%);
 }
 .modal-close-floater.right {
@@ -498,6 +511,7 @@ a:hover {
     border-radius: 2rem;
     box-shadow: 2px 2px 5px #2e353e;
     font-size: 1.5em;
+    margin-left: 6.5em;
 }
 
 
@@ -520,13 +534,13 @@ a:hover {
     height: calc(80vw - 4em);
     object-fit: cover;
     margin-left: 4.5em;
-    margin-top: 2.5em;
+    margin-top: 2.0em;
 }
 
 .profile-body {
    text-align: center !important;
    padding:1em;
-   padding-top: 3em;
+   padding-top: 1em;
    color:#ceeaff;
 }
 .profile-name {
@@ -540,6 +554,17 @@ a:hover {
     height: calc(100vw - 4em);
     object-fit: cover;
     margin: 2em;
+}
+
+
+.profile-description {
+    margin-top: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-bottom: 1em;
+    color: #c6e2f8;
+    font-weight: 300;
+    line-height: 20px;
 }
 
 
@@ -717,19 +742,25 @@ h2, .h2 {
 
 
 .animallist-image img {
-    width: 100px;
-    height: 100px;
+    width: 160px;
+    height: 160px;
     object-fit: cover;
     vertical-align:text-bottom;
 }
 .animallist-item {
-    display: flex;
-    margin: 1em;
-    border-radius: 1em;
-    box-shadow: 2px 2px 10px #546375;
+    background: var(--color-main-medium);
+    border-radius: 2em;
+    box-shadow: inset -2px -2px 4px #344c70f0, -2px -2px 3px #c2e4ff4f, 1px 2px 4px #2b3d5878;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: relative;
+    flex-direction: column;
+    width: calc(50% - 8px);
+    margin-bottom: 18px;
     overflow: hidden;
 }
 .animallist-description {
+   margin-bottom: 0.4em;
    padding:0.5em;
 }
 .animallist-type,
@@ -738,8 +769,7 @@ h2, .h2 {
    margin-top: 0.4em;
 }
 .animallist-name {
-   margin-top: 0.2em;
-   font-size:1.5em;
+    font-size: 1em;
 }
 
 
@@ -949,7 +979,6 @@ b, strong {
 
 
 .animal-top {
-  margin-top: 20px;
   flex:none;
   position:relative;
   height:30vh;
@@ -1037,10 +1066,20 @@ b, strong {
 }
 .filter {
     font-size: 80%;
-    padding: 0px 0em;
-    font-weight:bold;    
+    padding-top: 0.8em;
+    padding: 4px 1em;
+    font-weight: bold;
+    border: 1.5px solid #50799b;
+    border-radius: 2em;
     margin-bottom: 2em;
     margin-top: 1em;
+    margin-left: 0.5em;
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    height: 2em;
+    background: #4b7598;
+    color: #ffffff;
 }
 
 
@@ -1073,8 +1112,81 @@ b, strong {
 }
 
 
+
+.image-uploader.thumbnail {
+    /*width: 5em;*/
+    height: 20em;
+    border-radius: 0.5em;
+    background-position: center;
+    background-size: cover;
+    position:relative;
+}
+.image-uploader.thumbnail:not(.picked){
+  border:2px solid var(--color-neutral-light);
+}
+/* This will add the floating plus symbol to the imagepicker */
+.image-uploader.thumbnail:before {
+  color:black;
+  content:'+';
+  position:absolute;
+  font-size:3em;
+  vertical-align:middle;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+/* This will hide the plus symbol behind the background of the imagepicker if the class "picked" is added to the element */
+.image-uploader.thumbnail.picked:before {
+  z-index:-1;
+}
+
+
+
 /*
 .display-flex.logo.img{
   width: 50vw;
 }*/
 
+.col-sm-6 {
+    grid-column: span 6;
+}
+
+
+ 
+
+
+/*Choose Location*/
+
+
+.bulldog-note {    
+    text-align: center !important;
+    margin-top: 0.2em;
+    border-radius: 40px 40px 0px 0px;
+    background: #f4faff;
+    box-shadow: -9px -10px 58px 3px #bcbcbc80, inset 0px 0px 8px 0px #546375cf;
+}
+
+
+
+
+/*map popup*/
+
+
+
+
+.map-popup-phote{
+    width: 18%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0.5em;
+    overflow: hidden;
+}
+
+
+
+
+.bulldog-new-location-img.img{
+      width: 80%;
+}

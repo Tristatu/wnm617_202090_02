@@ -110,13 +110,12 @@ const UserUploadPage = async() => {
    }).then(d=>{
       console.log(d)
 
-      makeUploaderImage({
-         namespace:'user-upload',
-         folder:'',
-         name:d.result[0].img
-      })
+
+
+      makeUploaderImage($("#user-upload-input"),d.result[0].img)
    });
 }
+
 
 
 
@@ -147,6 +146,8 @@ const AnimalProfilePage = async() => {
    })
    
 }
+
+
 
 const AnimalEditPage = async() => {
    query({

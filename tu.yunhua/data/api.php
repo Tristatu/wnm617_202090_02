@@ -218,6 +218,15 @@ function makeStatement($data) {
             ",$p,false);
          return ["result"=>"success"];
 
+      case "update_user_image":
+         $r = makeQuery($c,"UPDATE
+            `track_users`
+            SET
+               `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];
+
       case "update_animal":
          $r = makeQuery($c,"UPDATE
             `track_animals`
@@ -225,10 +234,14 @@ function makeStatement($data) {
                `name` = ?,
                `type` = ?,
                `breed` = ?,
-               `description` = ?
+               `description` = ?,
+               `img` = ?
             WHERE `id` = ?
             ",$p,false);
          return ["result"=>"success"];
+
+
+
 
 
       // DELETE STATEMENTS
@@ -243,6 +256,7 @@ function makeStatement($data) {
       default: return ["error"=>"No Matched type"];
    }
 }
+
 
 
 

@@ -1,4 +1,4 @@
-const drawAnimalList = (a,empty_phrase='Hey Dummy, add an animal.') => {
+const drawAnimalList = (a,empty_phrase='Here is no any bulldog. Click the plug button to add your first bulldog.') => {
    $("#list-page .animallist")
       .html(a.length?makeAnimalList(a):empty_phrase);
 }
@@ -6,9 +6,12 @@ const drawAnimalList = (a,empty_phrase='Hey Dummy, add an animal.') => {
 
 const makeAnimalList = templater(o=>`
 <div class="animallist-item js-animal-jump" data-id="${o.id}">
+      
    <div class="animallist-image">
       <img src="${o.img}" alt="">
    </div>
+
+
    <div class="animallist-description">
       <div class="animallist-name">${o.name}</div>
       <div class="animallist-type">Type: ${o.type}</div>
@@ -31,6 +34,8 @@ const makeUserProfile = templater(o=>`
    <div class="profile-location"><strong>Location</strong>: San Francisco, CA</div>
 </div>
 
+
+
 `);
 
 
@@ -46,6 +51,8 @@ const makeAnimalProfile = templater(o=>`
    <div class="profile-type" style="margin-bottom: 10px;">Type: ${o.type}</div>
    <div class="profile-breed">Breed: ${o.breed}</div>
 </div>
+   <div class="profile-description">Description: ${o.description}</div>
+
 <div style="display: inline-block;width: 30%;border-width: 0;background-color: var(--color-neutral-light);font: inherit;padding: 0.7em 1em;margin-left: 8.2em;outline: 0;text-align: center;border-radius: 1em;font-weight: 700;margin-top: 0.5em;     margin-bottom: 0.5em;
 ">
    <a href="#" class="js-animal-delete" data-id="${o.id}">Delete</a>
@@ -58,14 +65,16 @@ const makeAnimalProfile = templater(o=>`
 const makeAnimalPopup = o=>`
 <div class="display-flex">
 <div>
-   <img src="${o.img}" alt="" style="width:140px;height:210px">
+   <img src="${o.img}" alt="" style="width:140px;height:140px;padding-top: 1.5em;">
 </div>
-<div style="padding-left:1em;padding-top: 2em;}">
+<div style="padding-left:1em;padding-top: 1.5em;}">
    <div class="profile-name">${o.name}</div>
    <div><strong>Type</strong>: ${o.type}</div>
    <div style="margin-top: 0.5em;}"><strong>Breed</strong>: ${o.breed}</div>
    <div>
-   <a href="#" class="form-button js-animal-jump" data-id="${o.animal_id}">Know More</a> 
+      <div class="map-popup-photo">
+         <a href="#" class="form-button js-animal-jump" data-id="${o.animal_id}">Know More</a> 
+      </div>
    </div>
 </div>
 </div>
@@ -88,6 +97,15 @@ const FormControl = ({namespace,name,displayname,type,placeholder,value}) => {
 
 
 const makeAnimalEditForm = o => `
+
+<div>
+   <input type="hidden" id="animal-edit-image" value="${o.img}">
+   <label class="image-uploader thumbnail picked" style="background-image:url('${o.img}')">
+      <input type="file" data-role="none" id="animal-edit-upload">
+   </label>
+</div>
+
+
 ${FormControl({
    namespace:"animal-edit",
    name:"name",
@@ -112,6 +130,7 @@ ${FormControl({
    placeholder:"Type Animal Breed",
    value:o.breed
 })}
+
 <div class="form-control">
    <label for="animal-edit-description" class="form-label">Description</label>
    <textarea id="animal-edit-description" class="form-input-describe" data-role="none" placeholder="Type animal description">${o.description}</textarea>
@@ -167,11 +186,8 @@ const makeFilterList = (animals) => {
 
 
 
-
-const makeUploaderImage = ({namespace,folder,name}) => {
-   $(`#${namespace}-image`).val(folder+name);
-   $(`#${namespace}-page .image-uploader`)
-      .css({'background-image':`url('${folder+name}')`})
+const makeUploaderImage = (el,name,folder='') => {
+   $(el).parent().css({'background-image':`url('${folder+name}')`}).addClass("picked")
+      .prev().val(folder+name)
 }
-
 

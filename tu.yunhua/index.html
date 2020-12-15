@@ -40,9 +40,10 @@
    <section data-role="page" id="signin-page">
       <div data-role="main" class="display-flex flex-column">
          <div class="display-flex flex-justify-center"><h1>Welcome</h1></div>
+
          <div class="display-flex flex-align-center flex-justify-center">
-            <div class="logo">
-               <img src="./img/app_icon.png" viewBox="0 0 100 100" alt="Logo">
+            <div class="logo" style="margin-left: 1.0em;">
+               <img src="./img/app_icon.png" viewBox="0 0 100 100" alt="Logo"> 
            </div>
          </div>
 
@@ -107,22 +108,14 @@
    <section data-role="page" id="recent-page">
       <div data-role="main">
          <div class="map"></div>
-<!-- 
-         <header data-role="header">
-            <h1>Recen Location</h1>
-            <ul>
-               <li class="flex-stretch"></li>
-              
-               <li><a href="#" data-activate="#list-add-modal">&plus;</a></li>
-            </ul>
-         </header> -->
+
 
         <div class="modal" id="recent-animal-modal">
             <div class="modal-drawer bottom">
               <div class="modal-close-floater top right">
                   <div class="btn-circle" data-deactivate="#recent-animal-modal">×</div>
                </div>
-               <!-- <div class="modal-head"></div> -->
+
                <div class="modal-body"></div>
             </div>
          </div>
@@ -135,31 +128,6 @@
       </div>
 
       <footer data-role="footer" data-template="#footer-template-map"></footer> 
-
-      <!-- list-add-modal -->
-<!--       <div class="modal" id="list-add-modal">
-         <div class="modal-back" data-deactivate="#list-add-modal"></div>
-         <form id="list-add-form" data-ajax="false" class="modal-popup">
-            <div class="modal-head">Add Animal</div>
-            <div class="modal-body">
-               <div class="form-control">
-                  <label for="list-add-name" class="form-label">DUDU</label>
-                  <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-address" class="form-label">Address</label>
-                  <input id="list-add-address" type="text" class="form-input" data-role="none" placeholder="Type animal address">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-breed" class="form-label">Breed</label>
-                  <input id="list-add-breed" type="text" class="form-input" data-role="none" placeholder="Type animal breed">
-               </div>
-            </div>
-            <div class="modal-foot">
-               <input type="submit" value="Save" data-role="none">
-            </div>
-         </div>
-      </div> -->
 
    </section>
 
@@ -207,51 +175,12 @@
         <div class="filter-list"></div>
       </head>
 
-<!--       <header data-role="header">
-         <h1>List Page</h1>
-         <ul>
-            <li class="flex-stretch"></li>
-            <li><a href="#animal-add-page" data-activate="#list-add-modal">&plus;</a></li>
-         </ul>
-      </header> -->
       <div data-role="main">
-       <div class="overscroll">
-   
-           <!-- li*10>a[href=#animal-profile-page]{Animal $} -->
-
+        <div class="overscroll">
             <div class="animallist">
-
-               <div class="grid gap bulldoglist">
-           
-                 <!--  <a href="#animal-profile-page" class="bulldogcol">
-                    <figure class="bulldog-figure">
-                       <div class="bulldog-photo">
-                          <img src="img/bulldog/9.jpg">
-                          <div class="animallist-description">
-                             <div class="animal-name"><h2>DUDU</h2></div>
-                             <div class="animal-breed">French Bulldog</div>
-                          </div>
-                       </div>
-                    </figure>
-                  </a>
-                  <a href="#animal-profile-page" class="bulldogcol">
-                    <figure class="bulldog-figure">
-                       <div class="bulldog-photo">
-                          <img src="img/bulldog/9.jpg">
-                          <div class="animallist-description">
-                             <div class="animal-name"><h2>DUDU</h2></div>
-                             <div class="animal-breed">French Bulldog</div>
-                          </div>
-                       </div>
-                    </figure>
-                  </a> -->
-                  
-               </div>
-
+               <div class="grid gap bulldoglist"></div>
             </div>
-
-
-         </div>
+        </div>
       </div>
       
 
@@ -326,125 +255,6 @@
 
 
 
-<!-- list-add-modal -->
-<!-- 
-      <div class="modal" id="list-add-modal">
-         <div class="modal-back" data-deactivate="#list-add-modal"></div>
-         <form id="list-add-form" data-ajax="false" class="modal-popup">
-            <div class="modal-head">Add Animal</div>
-            <div class="modal-body">
-               <div class="form-control">
-                  <label for="list-add-name" class="form-label">DUDU</label>
-                  <input id="list-add-name" type="text" class="form-input" data-role="none" placeholder="Type animal name">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-address" class="form-label">Address</label>
-                  <input id="list-add-address" type="text" class="form-input" data-role="none" placeholder="Type animal address">
-               </div>
-               <div class="form-control">
-                  <label for="list-add-breed" class="form-label">Breed</label>
-                  <input id="list-add-breed" type="text" class="form-input" data-role="none" placeholder="Type animal breed">
-               </div>
-            </div>
-            <div class="modal-foot">
-               <input type="submit" value="Save" data-role="none">
-            </div>
-         </div>
-      </div>
-   </section> -->
-
-
-
-
-
-
-<!-- Account -->
-
-
-  <!--  <section data-role="page" id="user-profile-page">
-
-
-
-
-      <div data-role="main">
-        
-            <div class="profile-image">
-            <img src="img/profile.jpg" alt="">
-            </div> 
-            
-         <div class="overscroll">
-
-            <div class="profile-body">
-               <div class="profile-image">
-                  <img src="img/profilesmall.png" alt>
-               </div>
-
-
-               <div class="col-md-10 text-center pt-5">
-
-                  <div class="site-heading site-animate fadeInUp site-animated">
-                     <h4><strong class="d-block">Trista Tu</strong></h4>
-                     <h6 class="mb-4">Female</h6>
-                     <h6 class="mb-4">Web Designer</h6>
-                     <h6 class="mb-4">tristatutu@gmail.com</h6>
-                     <h6 class="mb-4">San Francisco, CA</h6>
-
-
-                     <a href="#settings-page" class="google-drive-opener" data-activate="#list-add-modal"><img src="img/icon/editicon.png" style="max-width: 40px; margin-top: 1em;"></a>
-
-                           
-                     <div class="bulldog-account-page" style="padding-top: 60px; padding-bottom: 10px;">
-                        <strong class="d-block text-white text-uppercase letter-spacing" style="    font-size: 0.8em;">Here Are My Bulldogs. </strong>
-                     </div>
-
-                     <div class="animallist">
-
-                        <div class="grid gap bulldoglist">
-                    
-                           <a href="#animal-profile-page" class="bulldogcol" style="grid-column: span 4;">
-                             <figure class="bulldog-figure">
-                                <div class="bulldog-photo">
-                                   <img src="img/bulldog/9.jpg">
-                                </div>
-                             </figure>
-                           </a>
-
-                           <a href="#animal-profile-page" class="bulldogcol" style="grid-column: span 4;">
-                             <figure class="bulldog-figure">
-                                <div class="bulldog-photo">
-                                   <img src="img/bulldog/9.jpg">
-                                </div>
-                             </figure>
-                           </a>
-
-                           <a href="#animal-profile-page" class="bulldogcol" style="grid-column: span 4;">
-                             <figure class="bulldog-figure">
-                                <div class="bulldog-photo">
-                                   <img src="img/bulldog/9.jpg">
-                                </div>
-                             </figure>
-                           </a>
-                          
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-
-
-         </div>
-      
-      </div>
-
-     /  <footer data-role="footer" data-template="#footer-template"></footer>  /
-
-      </div>
-      <footer data-role="footer" data-template="#footer-template-account"></footer> 
-      
-   </section> -->
- 
-
-
 
 <!-- user profile page -->
    <section data-role="page" id="user-profile-page">
@@ -467,6 +277,8 @@
 
          <div class="animallist">
             <h3 style="margin-bottom:2em; font-size: 100%; text-align: center;">Here are my bulldogs</h3>
+<!-- 
+
             <div class="grid gap bulldoglist">        
                <a href="#animal-profile-page" class="bulldogcol" style="grid-column: span 4;">
                  <figure class="bulldog-figure">
@@ -491,8 +303,9 @@
                     </div>
                  </figure>
                </a>
-              
             </div>
+ -->
+
          </div>
 
 
@@ -661,44 +474,25 @@
          </ul>
       </header>
       <div data-role="main" class="display-flex flex-column">
-         <div class="profile-top" style="height:100%;flex:none;">
-
-
-
-            <div class="animal-bottom">
-               <div class="profile"></div>
-            </div>
+         <!-- <div class="profile-top" style="height:100%;flex:none;"> -->
 
             <div class="animal-top">
                <div class="map"></div>
+
+              <div class="floater bottom right">
+                 <a href="#location-add-page" class="btn-circle google-drive-opener ui-link">+</a>
+              </div>
+
+            </div>            
+
+            <div class="overscroll">
+              <div class="animal-bottom">
+                 <div class="profile"></div>
+              </div>
             </div>
 
 
-<!-- Two buttons in one line -->
-
-
-          <!-- 
-            <div class="delete-add-button">
-
-                   <a href="#" class="form-button js-animal-jump google-drive-opener ui-link" data-id="8" style="
-                    float: left;
-                    width: 40%;
-                    margin-left: 20px;
-                ">Delete</a> 
-
-                   <a href="#" class="form-button js-animal-jump google-drive-opener ui-link" data-id="8" style="
-                    float: right;
-                    width: 40%;
-                    margin-right: 20px;
-                ">Add New</a> 
-
-            </div> -->
-
-            <div class="floater bottom right">
-               <a href="#location-add-page" class="btn-circle google-drive-opener ui-link">+</a>
-            </div>
-
-         </div>
+         <!-- </div> -->
       </div>
    </section>
 
@@ -712,16 +506,29 @@
       <header data-role="header">
          <h1>Choose Location</h1>
          <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
+            <li><a href="#" data-rel="back"><img src="img/icon/left.png" alt="" class="icon"></a></li>
+
             <li class="flex-stretch"></li>
             <li><a href="#location-description-page">Next</a></li>
          </ul>
       </header>
+
+
       <div data-role="main">
          <input type="hidden" id="location-add-lat">
          <input type="hidden" id="location-add-lng">
          <div class="map"></div>
       </div>
+
+
+      <div class="bulldog-note">
+        <div class="display-flex flex-column" style="padding:1em">
+          <p class="">Click on the map to create a new location for your bulldog.</p>
+          <div class="bulldog-new-location-img"><img src="img/map.png" style="width: 80%;"></div>
+        </div>
+      </div>
+
+
    </section>
 
 
@@ -746,10 +553,19 @@
       <div data-role="main">
          <div class="overscroll">
             <form id="location-add-form" data-ajax="false" style="padding:1em">
+
+               <div>
+                  <input type="hidden" id="location-add-image">
+                  <label class="image-uploader thumbnail">
+                     <input type="file" data-role="none" id="location-add-upload">
+                  </label>
+               </div>
+
                <div class="form-control">
                   <label for="location-add-description" class="form-label">Description</label>
                   <textarea id="location-add-description" class="form-input-describe" data-role="none" placeholder="Type location description"></textarea>
                </div>
+
             </form>
          </div>
       </div>
